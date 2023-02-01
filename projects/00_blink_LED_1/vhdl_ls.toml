@@ -4,5 +4,8 @@
 work.files = [
     'clock_divider_pkg.vhd',
     'clock_divider.vhd',
-    'testbench_clock_divider.vhd'
+    'testbench_clock_divider.vhd',
+    'blink_LED_1_pkg.vhd',
+    'blink_LED_1.vhd',
+    'testbench_blink_LED_1.vhd'
 ]

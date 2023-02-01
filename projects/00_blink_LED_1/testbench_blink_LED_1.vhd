@@ -2,28 +2,25 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library work;
-use work.clock_divider_pkg.all;
+use work.blink_LED_1_pkg.all;
 
-entity testbench_clock_divider is
-end testbench_clock_divider;
+entity testbench_blink_LED_1 is
+end testbench_blink_LED_1;
 
-architecture behavioral of testbench_clock_divider is
+architecture behavioral of testbench_blink_LED_1 is
     constant CLK_PERIOD : time := 20 ns; -- 50 MHz
 
     -- signals for the simulation target
-    signal clk_in_intern  : std_logic := '0';
-    signal rst_intern     : std_logic := '0';
-    signal clk_out_intern : std_logic := '0';
+    signal clk_in_intern : std_logic := '0';
+    signal rst_intern    : std_logic := '0';
+    signal led_intern    : std_logic := '0';
 begin
     -- Instantiate the target.
-    clock_divider_inst : entity work.clock_divider
-        generic map (
-            RATE => 4
-        )
+    blink_LED_1_inst : entity work.blink_LED_1
         port map (
-            clk_in  => clk_in_intern,
-            rst     => rst_intern,
-            clk_out => clk_out_intern
+            clk => clk_in_intern,
+            rst => rst_intern,
+            led => led_intern
         );
 
     -- Generate clock.
@@ -46,8 +43,3 @@ begin
         wait;
     end process;
 end behavioral;
-
-configuration cfg_testbench_clock_divider of testbench_clock_divider is
-    for behavioral
-    end for;
-end cfg_testbench_clock_divider;

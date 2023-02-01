@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 package clock_divider_pkg is
     component clock_divider is
-        generic(
+        generic (
             RATE : positive
         );
         port (
