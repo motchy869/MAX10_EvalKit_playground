@@ -1,0 +1,8 @@
+# File names are either absolute or relative to the parent folder of the
+# vhdl_ls.toml file and supports glob-style patterns.
+[libraries]
+work.files = [
+    'clock_divider_pkg.vhd',
+    'clock_divider.vhd',
+    'testbench_clock_divider.vhd'
+]
