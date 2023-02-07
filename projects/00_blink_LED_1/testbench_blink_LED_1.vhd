@@ -18,9 +18,9 @@ begin
     -- Instantiate the target.
     blink_LED_1_inst : entity work.blink_LED_1
         port map (
-            clk => clk_in_intern,
-            rst => rst_intern,
-            led => led_intern
+            clk       => clk_in_intern,
+            rst_async => rst_intern,
+            led       => led_intern
         );
 
     -- Generate clock.
