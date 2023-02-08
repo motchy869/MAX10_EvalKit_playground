@@ -96,8 +96,11 @@ set_global_assignment -name VHDL_FILE blink_LED_1.vhd
 set_global_assignment -name VHDL_FILE testbench_blink_LED_1.vhd
 set_global_assignment -name SDC_FILE blink_LED_1.sdc
 set_location_assignment PIN_121 -to rst_async
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clk
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to led
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rst_async
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to rst_async
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 1A
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 1B
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 2
