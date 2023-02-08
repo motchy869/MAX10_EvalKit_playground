@@ -1,0 +1,13 @@
+# ignore Quartus generated folders
+/board/
+/db/
+/incremental_db/
+/simulation/
+/output_files/
+/timing/
+/testbench/
+/*_sim/
+
+*.bak
+*.qws
+*.rpt
