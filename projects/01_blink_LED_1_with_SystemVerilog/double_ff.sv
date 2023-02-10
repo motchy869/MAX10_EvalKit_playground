@@ -1,9 +1,9 @@
 `default_nettype none
 
 module double_ff (
-    input logic clk,
-    input logic d_in,
-    output logic d_out
+    input wire clk,
+    input wire d_in,
+    output reg d_out = 1'b0
 );
 
 logic temp = 1'b0;
