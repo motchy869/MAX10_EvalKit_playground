@@ -3,6 +3,7 @@
 
 module testbench_clock_divider ();
 
+/* parameters */
 localparam CLK_PERIOD = 20; /* 50 MHz */
 
 /* signals for the simulation target */
