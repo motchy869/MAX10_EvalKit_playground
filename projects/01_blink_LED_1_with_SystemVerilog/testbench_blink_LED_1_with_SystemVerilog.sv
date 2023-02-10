@@ -23,7 +23,7 @@ initial begin
     rst <= 1'b1;
     #(3 * CLK_PERIOD)
     rst <= 1'b0;
-	 #(5 * CLK_PERIOD)
+	#(5 * CLK_PERIOD)
     $stop;
 end
 
