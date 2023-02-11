@@ -9,7 +9,7 @@ localparam CLK_PERIOD = 20; /* 50 MHz */
 /* signals for the simulation target */
 logic clk_in = 1'b0;
 logic rst = 1'b0;
-logic clk_out = 1'b0;
+logic clk_out;
 
 /* Instantiate the target. */
 clock_divider #(.RATE(3)) clock_divider_inst (.clk_in, .rst, .clk_out);
