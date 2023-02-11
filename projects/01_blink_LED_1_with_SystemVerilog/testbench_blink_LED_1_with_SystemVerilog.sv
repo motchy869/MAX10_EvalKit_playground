@@ -7,8 +7,8 @@ module testbench_blink_LED_1_with_SystemVerilog ();
 localparam CLK_PERIOD = 20; /* 50 MHz */
 
 /* signals for the simulation target */
-logic clk = 1'b0;
-logic rst = 1'b0;
+bit clk = 1'b0;
+bit rst = 1'b0;
 logic led = 1'b0;
 
 /* Instantiate the target. */

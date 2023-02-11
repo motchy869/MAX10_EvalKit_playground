@@ -7,8 +7,8 @@ module testbench_clock_divider ();
 localparam CLK_PERIOD = 20; /* 50 MHz */
 
 /* signals for the simulation target */
-logic clk_in = 1'b0;
-logic rst = 1'b0;
+bit clk_in;
+bit rst = 1'b0;
 logic clk_out;
 
 /* Instantiate the target. */
