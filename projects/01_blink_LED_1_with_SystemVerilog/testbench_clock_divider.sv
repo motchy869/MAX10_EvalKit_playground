@@ -5,6 +5,7 @@ module testbench_clock_divider ();
 
 /* parameters */
 localparam CLK_PERIOD = 20; /* 50 MHz */
+localparam RATE = 3; /* 1/3 */
 
 /* signals for the simulation target */
 bit clk_in;
@@ -12,7 +13,7 @@ bit rst = 1'b0;
 logic clk_out;
 
 /* Instantiate the target. */
-clock_divider #(.RATE(3)) clock_divider_inst (.clk_in, .rst, .clk_out);
+clock_divider #(.RATE(RATE)) clock_divider_inst (.clk_in, .rst, .clk_out);
 
 /* Generate clock. */
 always #(CLK_PERIOD / 2) clk_in <= ~clk_in;
@@ -23,7 +24,26 @@ initial begin
     rst <= 1'b1;
     #(3 * CLK_PERIOD)
     rst <= 1'b0;
-    #(5 * CLK_PERIOD)
+    #(10 * CLK_PERIOD)
+    $stop;
+end
+
+/* assertions */
+property p_clk_division_rise_to_fall;
+    @(posedge clk_in) disable iff (rst) $rose(clk_out) |-> ##RATE $fell(clk_out);
+endproperty
+
+property p_clk_division_fall_to_rise;
+    @(posedge clk_in) disable iff (rst) $fell(clk_out) |-> ##RATE $rose(clk_out);
+endproperty
+
+assert property (p_clk_division_rise_to_fall) else begin
+    $display("ERROR: failed");
+    $stop;
+end
+
+assert property (p_clk_division_fall_to_rise) else begin
+    $display("ERROR: failed");
     $stop;
 end
 
