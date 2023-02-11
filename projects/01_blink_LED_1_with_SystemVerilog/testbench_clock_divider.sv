@@ -39,12 +39,12 @@ endproperty
 
 assert property (p_clk_division_rise_to_fall) else begin
     $display("ERROR: failed");
-    $stop;
+    $fatal;
 end
 
 assert property (p_clk_division_fall_to_rise) else begin
     $display("ERROR: failed");
-    $stop;
+    $fatal;
 end
 
 endmodule
