@@ -3,7 +3,7 @@
 module blink_LED_1_with_SystemVerilog (
     input wire clk,
     input wire rst_async,
-    input wire led
+    output wire led
 );
 
 localparam CLK_FREQ = 50e6; /* 50 MHz */
