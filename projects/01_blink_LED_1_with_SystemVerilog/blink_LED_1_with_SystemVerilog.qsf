@@ -79,4 +79,23 @@ set_global_assignment -name SYSTEMVERILOG_FILE clock_divider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testbench_clock_divider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE blink_LED_1_with_SystemVerilog.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testbench_blink_LED_1_with_SystemVerilog.sv
+set_location_assignment PIN_27 -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clk
+set_location_assignment PIN_121 -to rst_async
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rst_async
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to rst_async
+set_location_assignment PIN_132 -to led
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to led
+set_global_assignment -name SDC_FILE blink_LED_1_with_SystemVerilog.sdc
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 1A
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 1B
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 2
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 3
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 4
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 5
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 6
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 7
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
