@@ -16,11 +16,11 @@ always_ff @(posedge clk_in, posedge rst) begin
         count <= 0;
         clk_out <= 1'b0;
     end else begin
-        if (count == RATE-1) begin
+        if (count == $bits(count)'(RATE-1)) begin
             count <= 0;
             clk_out <= ~clk_out;
         end else begin
-            count <= count + 1;
+            count <= count + 1'b1;
         end
     end
 end
