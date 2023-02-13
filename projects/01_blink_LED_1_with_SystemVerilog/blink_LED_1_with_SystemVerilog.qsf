@@ -52,9 +52,9 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_
 set_global_assignment -name EDA_BOARD_DESIGN_TIMING_TOOL "Stamp (Timing)"
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT STAMP -section_id eda_board_design_timing
-set_global_assignment -name EDA_BOARD_DESIGN_SYMBOL_TOOL "ViewDraw (Symbol)"
+set_global_assignment -name EDA_BOARD_DESIGN_SYMBOL_TOOL "<None>"
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VIEWDRAW -section_id eda_board_design_symbol
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_board_design_symbol
 set_global_assignment -name EDA_BOARD_DESIGN_SIGNAL_INTEGRITY_TOOL "IBIS (Signal Integrity)"
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT IBIS -section_id eda_board_design_signal_integrity
