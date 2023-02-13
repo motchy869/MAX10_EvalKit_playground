@@ -12,7 +12,7 @@ bit rst = 1'b0;
 logic led = 1'b0;
 
 /* Instantiate the target. */
-blink_LED_1_with_SystemVerilog blink_LED_1_with_SystemVerilog_inst (.clk, .rst_async(rst), .led);
+blink_LED_1_with_SystemVerilog blink_LED_1_with_SystemVerilog_inst (.clk(clk), .rst_async(rst), .led);
 
 /* Generate clock. */
 always #(CLK_PERIOD / 2) clk <= ~clk;

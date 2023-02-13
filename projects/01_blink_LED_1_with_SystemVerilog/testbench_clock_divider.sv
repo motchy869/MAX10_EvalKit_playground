@@ -13,7 +13,7 @@ bit rst = 1'b0;
 logic clk_out;
 
 /* Instantiate the target. */
-clock_divider #(.RATE(RATE)) clock_divider_inst (.clk_in, .rst, .clk_out);
+clock_divider #(.RATE(RATE)) clock_divider_inst (.clk_in(clk_in), .rst(rst), .clk_out);
 
 /* Generate clock. */
 always #(CLK_PERIOD / 2) clk_in <= ~clk_in;
